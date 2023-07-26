@@ -46,12 +46,11 @@
                   </li>
             </c:when>
             <c:otherwise>
-
                      <li>
                   <span class="btn btn-dark mt-2 d-flex align-items-center" style="vertical-align: middle;">${loginMember.id}(${loginMember.name})님 반가워요!</span>
                </li>
                <li class="nav-item mt-2 mx-4 me-5">
-                  <a href="<%=request.getContextPath()%>/getbag/logout" class="btn btn-outline-secondary" data-bs-auto-close="outside">로그아웃</a>
+                  <a href="<%=request.getContextPath()%>/getbag/signout" class="btn btn-outline-secondary" data-bs-auto-close="outside">로그아웃</a>
                </li> 
             </c:otherwise>
          </c:choose>
