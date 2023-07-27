@@ -87,6 +87,7 @@ position:fixed;
 top:0;
 left:0;
 width:100%;
+z-index: 9999;
 }
 
 #navbarMini {
@@ -127,10 +128,22 @@ width:100%;
 
 .mainItem {
     width: 100%;
-    border: 1px solid black;
+    
+}
+.mainbox{
+	position: relative; 
+	overflow: hidden;
+	border: 1px solid black;
     border-right: 0px;
     border-bottom: 0px;
 }
+.mainbox img{
+	transition: all 0.3s ease-in-out;
+}
+.mainbox:hover img{
+	transform: scale(1.2);
+}
+
 
 /********* floating *********/
 .floating {
