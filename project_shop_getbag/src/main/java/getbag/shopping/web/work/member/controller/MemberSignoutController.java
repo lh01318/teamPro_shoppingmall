@@ -21,9 +21,4 @@ public class MemberSignoutController implements HttpController {
       //System.out.println("로그아웃완료");
       return "redirect:/getbag/index";
    }
-   
-   public static void main(String[] args) {
-	   
-	
-}
 }

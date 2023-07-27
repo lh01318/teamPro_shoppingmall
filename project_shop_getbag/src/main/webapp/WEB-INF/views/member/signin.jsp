@@ -1,3 +1,5 @@
+signin.jsp
+
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -30,9 +32,14 @@
             <c:if test="${not empty errorMessage}">
                <div class="alert alert-danger text-center">${errorMessage}</div>
             </c:if>
-          <form class="needs-validation" novalidate action="#" method="post"><div class="mb-3">
+          <form class="needs-validation" novalidate action="#" method="post">
+            <!-- 아이디 저장(필드값 유무)-->
+             <div class="mb-3">
               <label for="id">* 아이디</label> 
-              <input type="id" class="form-control" id="uid" name="id" placeholder="" required>
+              <input type="text" class="form-control" id="uid" name="id" placeholder="" 
+                 <c:if test="${not empty cookie.saveid}"> value="${cookie.saveid.value}" </c:if> 
+                 <c:if test="${empty cookie.saveid}"> value="" </c:if> 
+                 required>
               <div class="invalid-feedback">이메일을 입력해주세요.</div>
             </div>
             
@@ -42,18 +49,12 @@
               <div class="invalid-feedback">비밀번호를 입력해주세요.</div>
             </div>
 
-            <!--  <a href="#"><div class="find mb-3">아이디/비밀번호 찾기</div></a> -->
-            
-            <!-- 아이디 저장 -->
-                  <div class="mb-3 form-check">
-                     <input type="checkbox" class="form-check-input" id="saveid"
-                        name="saveid" <c:if test="${not empty cookie.saveid}">checked</c:if>>
-                     <label class="form-check-label" for="saveid">아이디 저장</label>
-                  </div>
-                  <!--  <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="saveid" name="saveid" required> 
-              <label class="custom-control-label" for="saveid"> 아이디 저장</label>
-            </div> -->
+            <!-- 아이디 저장(체크박스 체크 여부) -->
+         <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="saveid"
+               name="saveid" <c:if test="${not empty cookie.saveid}">checked</c:if>>
+            <label class="custom-control-label" for="saveid">아이디 저장</label>
+         </div>
 
             <div class="mb-4"></div>
             <button class="btn btn-simple mb-3" type="submit">로그인하기</button>

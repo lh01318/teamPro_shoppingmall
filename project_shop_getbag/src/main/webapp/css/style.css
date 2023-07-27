@@ -281,6 +281,9 @@ footer{
 .accordion-button:after {
     background-image: none; /* Remove the background color arrow */
 }
+.accordion-button {
+   position: static !important;
+   }
 
 .pagination .page-link {
     color: #000 !important;
@@ -312,3 +315,16 @@ footer{
     width: 500px;
     height: 250px; 
 }
+
+.nav-link{
+	background-position: left bottom !important;
+    background-repeat: no-repeat !important;
+    background-size: 0% 3px !important;
+    background-image: linear-gradient(45deg, black, transparent) !important;
+    transition: background-size 400ms ease !important;
+}
+.nav-link:hover {
+  background-size: 100% 3px !important;
+  font-weight: bold;
+  }
+  

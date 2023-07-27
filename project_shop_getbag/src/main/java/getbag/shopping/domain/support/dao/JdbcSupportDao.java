@@ -9,14 +9,14 @@ import java.util.List;
 import getbag.shopping.domain.support.dto.Support;
 
 /**
- * RDB를 통해 고객센터 저장 및 관리(검색, 수정, 삭제) 구현체
+ * RDB를 통해 고객센터 문의글 저장 및 관리(검색, 수정, 삭제) 구현체
  * 
  * @author 홍재헌
  */
 public class JdbcSupportDao implements SupportDao {
 
 	/**
-	 * 신규상품 등록
+	 * 신규 문의 등록
 	 */
 	public Support create(Connection connection, Support support) {
 		StringBuilder sb = new StringBuilder();
@@ -52,15 +52,16 @@ public class JdbcSupportDao implements SupportDao {
 			throw new RuntimeException(e.getMessage());
 		} finally {
 			try {
-				if (rs != null)
-					rs.close();
-				if (pstmt != null)
-					pstmt.close();
+				if (rs != null) rs.close();
+				if (pstmt != null) pstmt.close();
 			} catch (Exception e) {}
 		}
 		return support;
 	}
-
+	
+	/**
+	 * 문의 번호로 글 찾기
+	 */
 	public Support findByCode(Connection connection, String code) {
 		Support support = null;
 		StringBuilder sb = new StringBuilder();
@@ -98,6 +99,9 @@ public class JdbcSupportDao implements SupportDao {
 		return support;
 	}
 
+	/**
+	 * 문의 내용 전체 찾기
+	 */
 	@Override
 	public List<Support> findByAll(Connection connection) {
 		List<Support> list = null;

@@ -63,13 +63,10 @@
   </div>
   
   <!-- =============== floating =============== -->
-
   <jsp:include page="/WEB-INF/views/modules/floating.jsp" />
-  
 
   <!-- =============== Footer =============== -->
   <jsp:include page="/WEB-INF/views/modules/footer.jsp" />
-
 
 	<!-- JavaScript Libraries -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>

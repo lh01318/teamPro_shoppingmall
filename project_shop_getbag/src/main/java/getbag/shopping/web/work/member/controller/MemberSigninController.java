@@ -49,14 +49,18 @@ public class MemberSigninController implements HttpController {
                      } catch (UnsupportedEncodingException e) {
                         e.printStackTrace();
                      }
+                  } else {
+                     // 아이디 저장 미 체크시 쿠키 삭제
+                        Cookie deleteCookie = new Cookie("saveid", null);
+                        deleteCookie.setPath("/");
+                        deleteCookie.setMaxAge(0);
+                        response.addCookie(deleteCookie);
                   }   
-               } 
-               else {
+               } else { 
                   model.put("errorMessage", "로그인 오류입니다. 다시 시도해주세요.");
                }
-            }
+            } 
             return viewName;
          }
+
       }
-
-

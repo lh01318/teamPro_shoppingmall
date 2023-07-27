@@ -58,7 +58,7 @@
             </div>
             <div class="mb-4"></div>
             <button class="btn btn-simple mb-3" type="submit">가입완료</button>
-            <a href="<%=request.getContextPath()%>/getbag/signup-action"><div class="already mb-5">이미 계정이 있습니까?<br>로그인</div></a>
+            <a href="<%=request.getContextPath()%>/getbag/signin"><div class="already mb-5">이미 계정이 있습니까?<br>로그인</div></a>
           </form>
         </div>
       </div>
